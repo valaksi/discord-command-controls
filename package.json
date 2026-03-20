@@ -1,0 +1,32 @@
+{
+  "name": "discord-command-controls",
+  "version": "0.1.0",
+  "description": "Reusable command catalog and policy helpers for Discord bots and dashboards.",
+  "type": "module",
+  "license": "MIT",
+  "author": "vuguul",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vuguul/discord-command-controls.git"
+  },
+  "keywords": [
+    "discord",
+    "discordjs",
+    "command-controls",
+    "permissions",
+    "moderation",
+    "dashboard"
+  ],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "tsx --test tests/**/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
