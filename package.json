@@ -4,7 +4,7 @@
   "description": "Reusable command catalog and policy helpers for Discord bots and dashboards.",
   "type": "module",
   "license": "MIT",
-  "author": "vuguul",
+  "author": "Valaksi",
   "repository": {
     "type": "git",
     "url": "https://github.com/vuguul/discord-command-controls.git"

@@ -34,7 +34,7 @@ The goal is to keep Discord command governance in one place instead of duplicati
 
 ## Author
 
-Built and published by [vuguul](https://github.com/vuguul).
+Built and published by Valaksi.
 
 ## License
 
