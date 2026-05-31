@@ -3,7 +3,7 @@
 ![CI](https://github.com/valaksi/discord-command-controls/actions/workflows/ci.yml/badge.svg)
 ![MIT License](https://img.shields.io/badge/license-MIT-8fe3c7)
 
-Reusable command catalog and policy helpers for Discord bots and admin dashboards.
+Reusable command catalog and policy helpers for Discord bots and admin dashboards, maintained by Vaguul under the Zemiax personal software studio.
 
 This package extracts the command enable/disable and allow/deny policy logic into a small standalone TypeScript module so a bot runtime and a dashboard can share the same rules.
 
@@ -52,7 +52,7 @@ The goal is to keep Discord command governance in one place instead of duplicati
 
 ## Author
 
-Built and published by Valaksi.
+Built and maintained by Vaguul for Zemiax.
 
 ## License
 

@@ -2,7 +2,7 @@
 
 ## Primary maintainer
 
-- Valaksi: repository owner, release manager, triage owner, and security contact.
+- Vaguul: programmer, repository owner, release manager, triage owner, and security contact for Zemiax public utilities.
 
 ## Maintenance responsibilities
 
