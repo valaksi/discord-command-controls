@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import {
   evaluateCommandPolicy,
   filterSupportedCommandControls,
+  filterSupportedCommandPolicies,
+  getPolicyTargetsForCommand,
   isCommandEnabled,
   resolveCommandControlsFromDashboardConfig,
   resolveCommandPoliciesFromDashboardConfig,
@@ -131,4 +133,39 @@ test("subcommand policies are preserved independently from root command mirrors"
   assert.equal(next.commandPolicies["spotify.play"].enabled, false);
   assert.deepEqual(next.commandPolicies["spotify.play"].allowedRoleIds, ["dj"]);
   assert.deepEqual(next.commandPolicies["spotify.play"].allowedChannelIds, ["music-room"]);
+});
+
+test("filterSupportedCommandPolicies drops unknown policy targets and normalizes arrays", () => {
+  const policies = filterSupportedCommandPolicies({
+    ban: {
+      enabled: false,
+      allowedRoleIds: ["staff", 42] as unknown as string[],
+      deniedRoleIds: [null, "muted"] as unknown as string[],
+      allowedChannelIds: ["mod-room"],
+      deniedChannelIds: ["general", false] as unknown as string[]
+    },
+    imaginary: {
+      enabled: false,
+      allowedRoleIds: ["ghost"],
+      deniedRoleIds: [],
+      allowedChannelIds: [],
+      deniedChannelIds: []
+    }
+  });
+
+  assert.equal(policies.ban.enabled, false);
+  assert.deepEqual(policies.ban.allowedRoleIds, ["staff"]);
+  assert.deepEqual(policies.ban.deniedRoleIds, ["muted"]);
+  assert.deepEqual(policies.ban.allowedChannelIds, ["mod-room"]);
+  assert.deepEqual(policies.ban.deniedChannelIds, ["general"]);
+  assert.equal("imaginary" in policies, false);
+});
+
+test("getPolicyTargetsForCommand returns root and subcommand targets together", () => {
+  const targets = getPolicyTargetsForCommand("spotify");
+  const keys = targets.map((target) => target.key);
+
+  assert.ok(keys.includes("spotify"));
+  assert.ok(keys.includes("spotify.play"));
+  assert.ok(keys.includes("spotify.volume"));
 });

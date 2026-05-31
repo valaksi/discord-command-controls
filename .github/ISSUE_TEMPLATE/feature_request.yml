@@ -1,0 +1,31 @@
+name: Feature request
+description: Propose a new helper, catalog entry, policy target, or documentation improvement.
+title: "feat: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What bot or dashboard workflow would this improve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the smallest useful change.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Command catalog
+        - Command policies
+        - Dashboard serialization
+        - Documentation
+        - Tests
+    validations:
+      required: true

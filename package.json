@@ -1,6 +1,6 @@
 {
   "name": "discord-command-controls",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reusable command catalog and policy helpers for Discord bots and dashboards.",
   "type": "module",
   "license": "MIT",
@@ -27,6 +27,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
+    "validate": "npm run typecheck && npm test",
     "test": "tsx --test tests/**/*.test.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

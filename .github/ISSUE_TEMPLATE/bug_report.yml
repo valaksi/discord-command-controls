@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a command policy, catalog, or dashboard serialization bug.
+title: "bug: "
+labels: ["bug", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the behavior that looks wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe what should happen instead.
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Minimal config or policy fixture
+      description: Paste a small dashboard config or policy object when possible. Do not include real tokens, webhook URLs, or private guild IDs.
+      render: json
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation tried
+      description: Include commands or tests you ran, if any.

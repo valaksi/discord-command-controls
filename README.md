@@ -26,7 +26,19 @@ npm install
 ```bash
 npm test
 npm run typecheck
+npm run validate
 ```
+
+## Maintainer workflow
+
+- Triage new issues by impact: policy correctness, catalog coverage, dashboard serialization, then documentation.
+- Keep `commandCatalog`, `commandPolicyTargets`, README examples, and tests aligned in the same change.
+- Cut patch releases for documentation and compatibility fixes, and minor releases for new policy surface.
+- Use the roadmap to keep small issues visible for outside contributors.
+
+## Project status
+
+This project is maintained as a small public utility for Discord bot builders who need shared command governance between a runtime and a dashboard. The current focus is correctness, predictable serialization, and easy contribution paths for catalog and policy coverage.
 
 ## Maintenance
 
