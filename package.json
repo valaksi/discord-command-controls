@@ -7,6 +7,7 @@
   "author": "Vaguul (Zemiax)",
   "sideEffects": false,
   "files": [
+    "docs",
     "src",
     "README.md",
     "LICENSE"
@@ -27,6 +28,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
+    "docs:catalog": "tsx scripts/generate-command-catalog-doc.ts",
     "validate": "npm run typecheck && npm test",
     "test": "tsx --test tests/**/*.test.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"

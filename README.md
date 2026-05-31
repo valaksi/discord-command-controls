@@ -47,6 +47,14 @@ Use stable IDs from your own app. Do not paste live Discord tokens, webhook URLs
 
 `resolveCommandControlsFromDashboardConfig(config)` returns the root command mirrors used by simple dashboards. `resolveCommandPoliciesFromDashboardConfig(config)` returns root and subcommand policy targets for full policy editors.
 
+## Command catalog
+
+The generated command table lives in [docs/command-catalog.md](docs/command-catalog.md). Regenerate it after catalog changes:
+
+```bash
+npm run docs:catalog
+```
+
 ## Install
 
 ```bash
