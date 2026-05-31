@@ -90,6 +90,56 @@ test("evaluateCommandPolicy enforces deny and allow lists", () => {
   );
 });
 
+test("evaluateCommandPolicy keeps deny checks ahead of allow-list checks", () => {
+  const policy = {
+    enabled: true,
+    allowedRoleIds: ["staff"],
+    deniedRoleIds: ["muted"],
+    allowedChannelIds: ["mod-room"],
+    deniedChannelIds: ["general"]
+  };
+
+  assert.equal(
+    evaluateCommandPolicy(policy, {
+      channelId: "general",
+      roleIds: []
+    }).reason,
+    "channel_denied"
+  );
+  assert.equal(
+    evaluateCommandPolicy(policy, {
+      channelId: "random",
+      roleIds: ["muted", "staff"]
+    }).reason,
+    "role_denied"
+  );
+});
+
+test("evaluateCommandPolicy reports channel and role allow-list failures distinctly", () => {
+  const policy = {
+    enabled: true,
+    allowedRoleIds: ["staff"],
+    deniedRoleIds: [],
+    allowedChannelIds: ["mod-room"],
+    deniedChannelIds: []
+  };
+
+  assert.equal(
+    evaluateCommandPolicy(policy, {
+      channelId: "random",
+      roleIds: ["staff"]
+    }).reason,
+    "channel_not_allowed"
+  );
+  assert.equal(
+    evaluateCommandPolicy(policy, {
+      channelId: "mod-room",
+      roleIds: []
+    }).reason,
+    "role_not_allowed"
+  );
+});
+
 test("writeCommandPoliciesToDashboardConfig keeps boolean mirrors for command controls", () => {
   const next = writeCommandPoliciesToDashboardConfig(
     {},
