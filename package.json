@@ -1,10 +1,16 @@
 {
   "name": "discord-command-controls",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reusable command catalog and policy helpers for Discord bots and dashboards.",
   "type": "module",
   "license": "MIT",
   "author": "Valaksi",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/valaksi/discord-command-controls.git"
