@@ -19,6 +19,8 @@ This package extracts the command enable/disable and allow/deny policy logic int
 
 Use stable IDs from your own app. Do not paste live Discord tokens, webhook URLs, or private guild IDs into fixtures.
 
+The copy-paste fixture lives at [docs/dashboard-config.fixture.json](docs/dashboard-config.fixture.json).
+
 ```json
 {
   "commandControls": {

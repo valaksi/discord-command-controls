@@ -1,0 +1,30 @@
+{
+  "commandControls": {
+    "ban": true,
+    "warn": true,
+    "help": true
+  },
+  "commandPolicies": {
+    "ban": {
+      "enabled": true,
+      "allowedRoleIds": ["role-staff"],
+      "deniedRoleIds": ["role-muted"],
+      "allowedChannelIds": ["channel-mod-log"],
+      "deniedChannelIds": ["channel-general"]
+    },
+    "warn": {
+      "enabled": true,
+      "allowedRoleIds": ["role-staff", "role-helper"],
+      "deniedRoleIds": [],
+      "allowedChannelIds": ["channel-mod-log", "channel-support"],
+      "deniedChannelIds": []
+    },
+    "help": {
+      "enabled": true,
+      "allowedRoleIds": [],
+      "deniedRoleIds": [],
+      "allowedChannelIds": [],
+      "deniedChannelIds": []
+    }
+  }
+}
